@@ -109,12 +109,15 @@ header a {
 }
 
 .Container .thumb {
-    top: 40px; /* Mover para o topo */
-    right: -5px; /* Mover para a direita */
+    bottom: 10px; /* Posicionar no fundo */
+    right: 10px; /* Posicionar à direita */
     display: flex;
-    gap: 20px;
-    justify-content: flex-start; /* Alinha as miniaturas lado a lado */
+    gap: 10px; /* Espaçamento entre miniaturas */
+    justify-content: flex-end;
 }
+
+
+
 
 
 .Container .thumb .thumb-item {
@@ -123,13 +126,31 @@ header a {
     position: relative;
 }
 
+.Container .thumb .thumb-item {
+    position: relative;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+.Container .thumb .thumb-item.active {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
 .Container .thumb .thumb-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
     filter: brightness(80%);
+    transition: transform 0.3s, filter 0.3s;
 }
+
+
+.Container .thumb .thumb-item img:hover {
+    filter: brightness(100%);
+    transform: scale(1.05);
+}
+
 
 .Container .thumb .content {
     position: absolute;
