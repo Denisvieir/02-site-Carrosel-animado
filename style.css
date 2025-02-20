@@ -34,7 +34,12 @@ header a {
     width: 100vw;
     margin-top: -50px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .Container .list, .Container .thumb {
     position: absolute;
@@ -164,9 +169,10 @@ header a {
     gap: 10px;
     position: absolute;
     bottom: 120px;
-    left: 120px;
-    width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
 }
+
 
 footer {
     text-align: center;
@@ -197,5 +203,32 @@ footer {
     .Container {
         height: auto;
         margin-top: 0;
+        padding: 20px;
+    }
+    
+    .list .list-item .title {
+        font-size: 3rem;
+    }
+    
+    .list .list-item .description {
+        font-size: 1.2rem;
+    }
+    
+    .thumb {
+        position: static;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .thumb .thumb-item {
+        width: 100px;
+        height: 150px;
+        margin: 5px;
+    }
+    
+    .arrows {
+        position: static;
+        margin: 20px 0;
     }
 }
